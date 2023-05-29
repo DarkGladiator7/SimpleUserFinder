@@ -1,12 +1,16 @@
-import { Fragment, useState, useEffect, Component } from 'react';
+import { Fragment, useState, useEffect, Component } from "react";
 
-import Users from './Users';
-import classes from './UserFinder.module.css';
+import Users from "./Users";
+import classes from "./UserFinder.module.css";
 
 const DUMMY_USERS = [
-  { id: 'u1', name: 'Max' },
-  { id: 'u2', name: 'Manuel' },
-  { id: 'u3', name: 'Julie' },
+  { id: "u1", name: "Max" },
+  { id: "u2", name: "Manuel" },
+  { id: "u3", name: "Julie" },
+  { id: "u4", name: "Rocky" },
+  { id: "u5", name: "Yoru" },
+  { id: "u6", name: "Skye" },
+  { id: "u7", name: "Maradona" },  
 ];
 
 class UserFinder extends Component {
@@ -14,7 +18,7 @@ class UserFinder extends Component {
     super();
     this.state = {
       filteredUsers: [],
-      searchTerm: '',
+      searchTerm: "",
     };
   }
 
@@ -41,7 +45,7 @@ class UserFinder extends Component {
     return (
       <Fragment>
         <div className={classes.finder}>
-          <input type='search' onChange={this.searchChangeHandler.bind(this)} />
+          <input type="search" onChange={this.searchChangeHandler.bind(this)} />
         </div>
         <Users users={this.state.filteredUsers} />
       </Fragment>
