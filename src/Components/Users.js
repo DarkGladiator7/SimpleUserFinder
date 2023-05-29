@@ -1,21 +1,23 @@
-import { useState } from "react";
-import User from "./User";
-import { Component } from "react";
-import classes from "./Users.module.css";
+import { Component } from 'react';
+
+import User from './User';
+import classes from './Users.module.css';
 
 class Users extends Component {
   constructor() {
     super();
     this.state = {
       showUsers: true,
+      more: 'Test',
     };
   }
 
-  toggleUsersHandler = () => {
+  toggleUsersHandler() {
+    // this.state.showUsers = false; // NOT!
     this.setState((curState) => {
       return { showUsers: !curState.showUsers };
     });
-  };
+  }
 
   render() {
     const usersList = (
@@ -29,13 +31,14 @@ class Users extends Component {
     return (
       <div className={classes.users}>
         <button onClick={this.toggleUsersHandler.bind(this)}>
-          {this.state.showUsers ? "Hide" : "Show"} Users
+          {this.state.showUsers ? 'Hide' : 'Show'} Users
         </button>
         {this.state.showUsers && usersList}
       </div>
     );
   }
 }
+
 // const Users = () => {
 //   const [showUsers, setShowUsers] = useState(true);
 
@@ -54,7 +57,7 @@ class Users extends Component {
 //   return (
 //     <div className={classes.users}>
 //       <button onClick={toggleUsersHandler}>
-//         {showUsers ? "Hide" : "Show"} Users
+//         {showUsers ? 'Hide' : 'Show'} Users
 //       </button>
 //       {showUsers && usersList}
 //     </div>

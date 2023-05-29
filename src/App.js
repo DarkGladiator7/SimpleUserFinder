@@ -1,4 +1,4 @@
-import UserFinder from "./components/UserFinder";
+import UserFinder from './components/UserFinder';
 
 function App() {
   return (
